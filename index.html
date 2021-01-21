@@ -98,10 +98,22 @@
       #extra {
         display: none;
       }
+
+      #existential {
+        display: none;
+      }
+
+
       #specialStep {
         background-color: #f3f3f3;
         margin: 30rem auto 30rem auto;
       }
+
+      #existential2 {
+        background-color: #f3f3f3;
+        margin: 30rem auto 30rem auto;
+      }
+
       .btn {
         opacity: 100%;
         fill:#000000;
@@ -293,20 +305,54 @@
           </div>
 
           </div>
-          <div class="step" data-step="7.1" id="text5">
+          <div class="step" data-step="7" id="text5">
             <p> Conclusion</p>
           </div>
-          <div id="extra">
-            <div class = "step" id="extra1">
-              <p> Conclusion invalid extra info 2</p>
-            </div>
-            <div class = "step" id="extra1">
-              <p> Conclusion invalid extra info 2</p>
-            </div>
-          </div>
+
           <div class="step" data-step="8" id="text6">
             <p>this Syllogisms is "name"  </p>
           </div>
+
+          <div id="extra">
+            <div class = "step"  data-step="9" id="extra1">
+              <p> Conclusion invalid extra info 2</p>
+            </div>
+            <div class = "step" data-step="10" id="extra2">
+              <p> Conclusion invalid extra info 2</p>
+            </div>
+          </div>
+
+          <div id="existential">
+            <div class = "step" data-step="11" id="existential1">
+              <p> extra step 1 for existential</p>
+            </div>
+            <div class = "step"  data-step="12" id="existential2">
+              <div class="container">
+              <div class="row p-2">
+                <button type="button" id="SaP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">All S are P</button>
+              </div>
+              <div class="row p-2">
+                <button type="button" id="SiP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">Some S are P</button>
+              </div>
+              <div class="row p-2">
+                <button type="button" id="SeP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">No S is P</button>
+              </div>
+              <div class="row p-2">
+                <button type="button" id="SoP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">Some S are not P</button>
+              </div>
+              <div class="row p-2">
+                <button type="button" id="xxx" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">None of the above</button>
+              </div>
+              <div class="row p-2" style="text-align: center;">
+                <p class="col" id="answer2" style="color: #f3f3f3; display:inline;">Correct!</p>
+
+              </div>
+            </div>
+          </div>
+
+
+
+         
         </article>
 
         <figure>
@@ -444,19 +490,19 @@
      d="m 198.42291,182.85347 a 50,50 0 0 1 -29.99972,41.79745 50,50 0 0 1 0.16846,4.10155 50,50 0 0 1 -19.99981,39.99963 50,50 0 0 0 29.99972,9.99991 50,50 0 0 0 50.00005,-49.99954 50,50 0 0 0 -30.1687,-45.899 z" />
      <path
      id="S"
-     style="fill-rule:evenodd;"
+     style="fill-rule:evenodd;fill:white;"
      d="m 98.760772,182.85295 a 50,50 0 0 0 -30.168702,45.89901 50,50 0 0 0 50.00004,50.00005 50,50 0 0 0 29.99973,-10.00042 50,50 0 0 1 -19.99982,-39.99963 50,50 0 0 1 0.16898,-4.10104 50,50 0 0 1 -30.000228,-41.79797 z" />
      <path
      id="SMP"
-     style="fill-rule:evenodd;"
+     style="fill-rule:evenodd;fill:white;"
      d="m 148.59235,188.75233 a 50,50 0 0 0 -19.83135,35.89859 50,50 0 0 0 19.83135,4.10104 50,50 0 0 0 19.83135,-4.10053 50,50 0 0 0 -19.83135,-35.8991 z" />
      <path
      id="M"
-     style="fill-rule:evenodd;"
+     style="fill-rule:evenodd;fill:white;"
      d="m 148.59235,128.75186 a 50,50 0 0 0 -50.000048,50.00005 50,50 0 0 0 0.16847,4.10104 50,50 0 0 1 19.831858,-4.10104 50,50 0 0 1 29.99972,10.00043 50,50 0 0 1 30.00023,-10.00043 50,50 0 0 1 19.83135,4.10154 50,50 0 0 0 0.16847,-4.10154 50,50 0 0 0 -50.00005,-50.00005 z" />
      <path
      id="SM"
-     style="fill-rule:evenodd;"
+     style="fill-rule:evenodd;fill:white;"
      d="m 118.59211,178.75243 a 50,50 0 0 0 -19.831338,4.10052 50,50 0 0 0 30.000228,41.79745 50,50 0 0 1 19.83135,-35.89807 50,50 0 0 0 -30.00024,-9.9999 z" />
      <path
      id="MP"

@@ -78,8 +78,8 @@
 
         
         console.log("major has been set to " + this.a + this.rel +this.b);  
-        console.log(this.shading);
-        console.log("names are " + this.aName + this.bName);  
+       // console.log(this.shading);
+       // console.log("names are " + this.aName + this.bName);  
         }
       }
 
@@ -155,8 +155,44 @@
           }
       }
       var isValid = "";
-
+     
       var syllName = "";
+      var existential = {
+          bool: "not set",
+          on: "not set",
+          conclusion: "not set",
+          name: "not set",
+          get: function() {
+              let str = "nothing existential here";
+              if (this.bool == "true"){
+                  str = `Existential on ${this.on} gives ${this.name}, with conclusion ${this.conclusion}`;
+              }
+            return str;
+        },
+          set: function(on, conc, name){
+              this.on = on;
+              this.conclusion = conc;
+              this.name = name;
+              this.bool = "true";
+          },
+          reset : function(){
+              this.bool = "not set";
+              this.on = "not set";
+              this.conclusion = "not set";
+              this.name = "not set";
+          },
+          getCat : function () {
+              if (this.on == "S"){
+                  return categories.sName;
+              }
+              else if (this.on == "M"){
+                  return categories.mName;
+              }
+              else {
+                  return categories.pName;
+              }
+          }
+      }
 
       var conclusion = {
           a: "not set",
@@ -174,6 +210,9 @@
               this.a = "not set";
               this.rel = "not set";
               this.b = "not set";
+              //existential = "";
+              syllName = "";
+              isValid = "";
           }, 
           toString: function(){
               let w, x, y, z;
@@ -215,8 +254,7 @@
       let possibleColour = "red";
       let normalColour = "white";
       let backgroundColour = "#f3f3f3";
-      var part11 =  document.getElementById("p1.1").value;
-      var part13 =  document.getElementById("p1.3").value;
+      var undoMe = "";
     
       // initialize the scrollama
       var scroller = scrollama();
@@ -250,7 +288,7 @@
 
       // scrollama event handlers
       function handleStepEnter(response) {
-        console.log(response);
+         console.log(response);
         // response = { element, direction, index }
 
         // add color to current step only
@@ -265,6 +303,7 @@
               major.set();
               minor.set();
               conclusion.reset();
+              existential.reset();
               findConclusion();
               updateText();
               showLines("MP");
@@ -272,9 +311,6 @@
             else {
               console.log("0, going up");
               resetVenn();
-              //showLines("MP");
-              //document.getElementById("S").style.fillOpacity = "0";
-              //document.getElementById("S").style.strokeOpacity = "0.9";
 
             }
             
@@ -328,7 +364,38 @@
             console.log("4, going up");
           }
         }
+        
+        else if (response.index == 9){
+            if (response.direction == "down") {
+                
+                console.log("9, going down");
+            }
+            else {
+                console.log("9, going up");
+                document.getElementById(undoMe).style.fill = normalColour;
+            }
+        }
 
+        else if (response.index == 10){
+            if (response.direction == "down") {
+                existentialUpdate(existential.on);
+                console.log("10, going down");
+            }
+            else {
+                console.log("10, going up");
+            }
+        }
+
+        else if (response.index == 11){
+            if (response.direction == "down") {
+                console.log("11, going down");
+            }
+            else {
+                console.log("11, going up");
+            }
+            
+        }
+        
 
 
 
@@ -556,6 +623,28 @@ function majorUpdateVenn(){
       }
 }
 
+// updates for the existential assumption
+function existentialUpdate(cat){
+    console.log(document.getElementById("SMP").style.fill);
+    if (document.getElementById("SM").style.fill == normalColour){
+        document.getElementById("SM").style.fill = inhabitedColour;
+        undoMe = "SM";
+    }
+    if (document.getElementById("SMP").style.fill == normalColour){
+        document.getElementById("SMP").style.fill = inhabitedColour;
+        undoMe = "SMP";
+    }
+    if (cat == "S" && document.getElementById("S").style.fill == normalColour){
+        document.getElementById("S").style.fill = inhabitedColour;
+        undoMe = "S";
+    }
+    else if (cat == "M" && document.getElementById("M").style.fill == normalColour){
+        document.getElementById("M").style.fill = inhabitedColour;
+        undoMe = "M";
+    }
+
+}
+
 // updates text for scrolly boxes
 function updateText(){
    //conclusion = "";
@@ -588,7 +677,9 @@ function updateText(){
    else {
     document.getElementById("text5").innerText = `We cannot conclude anything about the relationship between ${categories.sName} and ${categories.pName} from the diagram`
    }
-   console.log(isValid);
+   
+
+
    if (isValid == "false"){
        document.getElementById("extra").style.display = "inline";
        document.getElementById("text6").style.display = "none";
@@ -596,6 +687,16 @@ function updateText(){
    else {
     document.getElementById("text6").innerText = "this syllogisms is called " + syllName;
    }
+
+   if (existential.bool == "true"){
+       document.getElementById("existential").style.display = "inline";
+       document.getElementById("existential1").innerHTML = `For this Syllogism, we can draw a different conclusion under the existential assumption`;
+       document.getElementById("existential1").innerHTML = `If we made the existential assumption on ${existential.getCat()}, (we know for certain that ${existential.getCat()} is inhabited), what could we then conclude?`;
+   }
+   else {
+    document.getElementById("existential").style.display = "none";
+   }
+
 
 }
 
@@ -606,6 +707,7 @@ function findConclusion(){
         if (minor.get() == "SaM") {
             conclusion.set("SaP");
             syllName = "Barbara";
+            existential.set("S", "SiP", "Barbari");
         }
 
         else if (minor.get() == "MiS") {
@@ -616,6 +718,13 @@ function findConclusion(){
         else if (minor.get() == "SiM"){
             conclusion.set("SiP");
             syllName = "Darii";
+            
+        }
+        else if (minor.get() == "MaS"){
+            conclusion.set("xxx");
+            syllName = "nothing for now";
+            isValid = "false";
+            existential.set("M", "SiP", "Darapti");
         }
         else {
           conclusion.set("xxx");
@@ -629,6 +738,7 @@ function findConclusion(){
         if (minor.get() == "SaM"){
             conclusion.set("SeP");
             syllName = "Celarent";
+           
         }
         else if (minor.get() == "MiS"){
             conclusion.set("SoP");
@@ -637,7 +747,15 @@ function findConclusion(){
         else if (minor.get() == "SiM"){
             conclusion.set("SoP");
             syllName =  "Ferio";
+            
         }
+        else if (minor.get() == "MaS"){
+            conclusion.set("xxx");
+            syllName = "nothing for now";
+            isValid = "false";
+            existential.set("M", "SoP", "Felapton");
+        }
+
         else {
             conclusion.set("xxx");
             syllName = "nothing for now";
@@ -649,6 +767,7 @@ function findConclusion(){
         if (minor.get() == "SaM"){
             conclusion.set("SeP");
             syllName = "Cesare";
+            existential.set("S", "SoP", "Celaront");
         }
         else if (minor.get() == "SiM"){
             conclusion.set("SoP");
@@ -657,6 +776,12 @@ function findConclusion(){
         else if (minor.get() == "MiS"){
             conclusion.set("SoP");
             syllName =  "Fresison";
+        }
+        else if (minor.get() == "MaS"){
+            conclusion.set("xxx");
+            syllName = "nothing for now";
+            isValid = "false";
+            existential.set("M", "SoP", "Fesapo");
         }
         else {
             conclusion.set("xxx");
@@ -667,8 +792,9 @@ function findConclusion(){
 
     else if (major.get() == "PaM") {
         if (minor.get() == "SeM"){
-            conclusion.set = "SeP";
+            conclusion.set("SeP");
             syllName =  "Camestres";
+            existential.set("S", "SoP", "Camestros");
         }
         else if (minor.get() == "MeS"){
             conclusion.set("SeP");
@@ -708,6 +834,7 @@ function findConclusion(){
 
     console.log("conclusion is " + conclusion.get());
     console.log(`${conclusion.toString()} ${isValid}`);
+    console.log(existential.get());
 
     //return syllName;
   
@@ -728,13 +855,25 @@ function showAnswer(x){
         document.getElementById("answer").style.color = "red";
         setTimeout(hideAnswer, 2000);
     }
+}
 
-    
+function showAnswer2(x){
+    if (x == existential.conclusion){
+        document.getElementById("answer2").innerText = "correct";
+        document.getElementById("answer2").style.color = "green";
+        
+    }
+    else {
+        document.getElementById("answer2").innerText = "Try again";
+        document.getElementById("answer2").style.color = "red";
+        setTimeout(hideAnswer, 2000);
+    }
 }
 
 function hideAnswer(){
     document.getElementById("answer").style.color = backgroundColour;
-    console.log("hiding answer");
+    document.getElementById("answer2").style.color = backgroundColour;
+    //console.log("hiding answer");
 }
 
 
