@@ -70,6 +70,7 @@
   #intro {
     max-width: 40rem;
     margin: 5rem auto;
+
     text-align: center;
   }
   
@@ -77,6 +78,10 @@
     font-size: 2em;
     margin: 2rem auto 0.5rem auto;
   }
+    span {
+      color: #8a8a8a;
+      font-size: 0.8em;
+    }
   
   .intro__dek {
     color: #8a8a8a;
@@ -86,10 +91,12 @@
     max-width: 60rem;
     margin: 1rem auto;
     text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .chunk {
-    font-size: 1em;
+    font-size: 0.7em;
     margin: 4rem auto 5.5rem auto;
   }
 
