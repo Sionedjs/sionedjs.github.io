@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Scrolling my Syllogisms v1</title>
+    <title>Syllogism Studio</title>
     <meta name="description" content="Scrollama: Sticky Side Example" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/gh/tretapey/raisincss@1.1.0/raisin.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -46,6 +46,10 @@
         transform: translate3d(0, 0, 0);
         
         z-index: 0;
+      }
+      .dFOpoG{
+              background-color: #0000ff;
+              display: none;
       }
 
       figure svg {
@@ -102,7 +106,16 @@
       #existential {
         display: none;
       }
+      
+      
 
+      #typeform{
+        background-color: rgba(0, 0,0, 0);
+
+      }
+     .screen__StickyFooter-sc-9mfxmi-10{
+       display: none;
+     }
 
       #specialStep {
         background-color: #f3f3f3;
@@ -350,8 +363,12 @@
             </div>
           </div>
 
+          <div class="step" data-step="13" id="feedback" style="background-color: #f3f3f3;">
+            <div class="typeform-widget" data-url="https://form.typeform.com/to/ddCkvSxk?typeform-medium=embed-snippet" style="width: 100%; height: 500px; border-radius: 10px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+          </div>
 
-
+    
+         
          
         </article>
 
@@ -572,11 +589,8 @@
         </figure>
       </section>
 
-      <section id="outro">
-        <p>we're done!! restart, pick another syllogism, something to make them keep learning, ya know?</p>
 
-    </section>
-
+      
 
 
 
