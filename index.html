@@ -151,7 +151,8 @@
   </head>
 
   <body>
-   
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top">restart</button>
+
     <main>
       
       <section id="intro">
@@ -164,7 +165,7 @@
       <section id="section1">
 
         <div class="chunk">
-        <p>
+        <p style="margin: 5rem auto 1rem auto">
           Hi! Welcome to
           Syllogism.studio, a web application designed to help you work through deductive reasoning problems called Syllogisms.
           <hr>
@@ -172,7 +173,7 @@
 
       
           
-        <p>
+        <p style="margin: 5rem auto 1rem auto">
           The first thing you need to do is replace S M and P with the terms in your problem. If you're not sure which term (cateogry) corresponds to which letter, look at the first character.
           
         </p>
@@ -202,7 +203,7 @@
 
         <div class="chunk">
 
-          <p>
+          <p style="margin: 5rem auto 1rem auto"> 
             Now that we've got the correct terms, you can use the form below to input your exact question. Under Major Premise you should
             give the first statement on your question page, then under Minor Premise the second.
           </p>
@@ -243,7 +244,7 @@
                          </select>
                      </div>
                  </div>
-            <p>
+            <p style="margin: 3rem auto">
               
             </p>
             <h1>Minor Premise</h1><br>
@@ -284,13 +285,13 @@
                     </div>
         </form>
         </div>
-
+        <hr>
       </section>
 
+   
 
-      <section id="section1">
-        <button type="button" class="btn" id="rand" onclick="randomise()">Randomise</button>
-      </section>
+
+    
 
       
 
@@ -329,8 +330,9 @@
               <div class="row p-2">
                 <button type="button" id="xxx" class="btn" style="width:100%;" onclick="showAnswer(this.id)">None of the above</button>
               </div>
-              <div class="row p-2" style="text-align: center;">
-                <p class="col" id="answer" style="color: #f3f3f3; display:inline;">Correct!</p>
+              <div class="row p-2" style="text-align: center; font-size: 0.7em;">
+                <p class="col" id="answer" style="color: #f3f3f3; display:inline;"> Place an X next to your answer on the sheet, then click restart ->> to move on to the next question.
+                </p>
 
               </div>
             </div>
@@ -338,51 +340,13 @@
           </div>
 
           </div>
-          <div class="step" data-step="7" id="text5">
-            <p> Conclusion</p>
-          </div>
+          
 
-          <div class="step" data-step="8" id="text6">
-            <p>this Syllogisms is "name"  </p>
-          </div>
+          
 
-          <div id="extra">
-            <div class = "step"  data-step="9" id="extra1">
-              <p> Conclusion invalid extra info 2</p>
-            </div>
-            <div class = "step" data-step="10" id="extra2">
-              <p> Conclusion invalid extra info 2</p>
-            </div>
-          </div>
+          
 
-          <div id="existential">
-            <div class = "step" data-step="11" id="existential1">
-              <p> extra step 1 for existential</p>
-            </div>
-            <div class = "step"  data-step="12" id="existential2">
-              <div class="container">
-                <div class="row p-2">
-                  <button type="button" id="SaP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">All S are P</button>
-                </div>
-                <div class="row p-2">
-                  <button type="button" id="SiP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">Some S are P</button>
-                </div>
-                <div class="row p-2">
-                  <button type="button" id="SeP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">No S is P</button>
-                </div>
-                <div class="row p-2">
-                  <button type="button" id="SoP" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">Some S are not P</button>
-                </div>
-                <div class="row p-2">
-                  <button type="button" id="xxx" class="btn" style="width:100%;" onclick="showAnswer2(this.id)">None of the above</button>
-                </div>
-                <div class="row p-2" style="text-align: center;">
-                  <p class="col" id="answer2" style="color: #f3f3f3; display:inline;">Correct!</p>
-                </div>
-             </div>
-          </div>
-        </div>
-
+        
         <div class="step" data-step="13" id="feedback" style="background-color: #f3f3f3;">
             <div class="typeform-widget" data-url="https://form.typeform.com/to/ddCkvSxk?typeform-medium=embed-snippet" style="width: 100%; height: 500px; border-radius: 10px;"></div> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         </div>
