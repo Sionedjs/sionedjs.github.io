@@ -51,29 +51,29 @@
           if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")){
               this.rel = "a";
               this.shading = "uninhabited";
-              this.explaination = `no one can belong to ${this.aName} but not to ${this.bName}`;
+              this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
           }
           else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")){
               this.rel = "e";
               this.shading = "uninhabited";
-              this.explaination = `no one can belong to both ${this.aName} and ${this.bName}`;
+              this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
           }
           else if (part1 == "Some" && part2 == "are"){
               this.rel = "i";
               this.shading = "inhabited";
-              this.explaination = `someone belongs to both ${this.aName} and ${this.bName}`;
+              this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
           }
           else if (part1 == "Some" && part2 == "are not"){
               this.rel = "o";
               this.shading = "inhabited";
-              this.explaination = `someone belongs to ${this.aName} but not to ${this.bName}`;
+              this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
           }
 
         if (this.shading == "uninhabited"){
             this.shadingColour = "grey";
         }
         else {
-            this.shadingColour = "red";
+            this.shadingColour = "green";
         }
 
         
@@ -126,28 +126,28 @@
             if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")){
                 this.rel = "a";
                 this.shading = "uninhabited";
-                this.explaination = `no one can belong to ${this.aName} but not to ${this.bName}`;
+                this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
             }
             else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")){
                 this.rel = "e";
                 this.shading = "uninhabited";
-                this.explaination = `no one can belong to both ${this.aName} and ${this.bName}`;
+                this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
             }
             else if (part1 == "Some" && part2 == "are"){
                 this.rel = "i";
                 this.shading = "inhabited";
-                this.explaination = `someone belongs to both ${this.aName} and ${this.bName}`;
+                this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
             }
             else if (part1 == "Some" && part2 == "are not"){
                 this.rel = "o";
                 this.shading = "inhabited";
-                this.explaination = `someone belongs to ${this.aName} but not to ${this.bName}`;
+                this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
             }
             if (this.shading == "uninhabited"){
                 this.shadingColour = "grey";
             }
             else {
-                this.shadingColour = "red";
+                this.shadingColour = "green";
             }
         
             
@@ -250,8 +250,8 @@
           }  
         }
       let emptyColour = "grey";
-      let inhabitedColour = "red";
-      let possibleColour = "red";
+      let inhabitedColour = "green";
+      let possibleColour = "green";
       let normalColour = "white";
       let backgroundColour = "#f3f3f3";
       var undoMe = "";
@@ -860,7 +860,7 @@ function showAnswer(x){
 
     else {
         document.getElementById("answer").innerText = "Try again";
-        document.getElementById("answer").style.color = "red";
+        document.getElementById("answer").style.color = "green";
         setTimeout(hideAnswer, 2000);
     }
     */
@@ -874,7 +874,7 @@ function showAnswer2(x){
     }
     else {
         document.getElementById("answer2").innerText = "Try again";
-        document.getElementById("answer2").style.color = "red";
+        document.getElementById("answer2").style.color = "green";
         setTimeout(hideAnswer, 2000);
     }
 }
