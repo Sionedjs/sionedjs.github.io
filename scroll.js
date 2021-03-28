@@ -180,6 +180,7 @@
               this.on = "not set";
               this.conclusion = "not set";
               this.name = "not set";
+              this.on = "not set";
           },
           getCat : function () {
               if (this.on == "S"){
@@ -250,8 +251,8 @@
           }  
         }
       let emptyColour = "grey";
-      let inhabitedColour = "red";
-      let possibleColour = "red";
+      let inhabitedColour = "green";
+      let possibleColour = "green";
       let normalColour = "white";
       let backgroundColour = "#f3f3f3";
       var undoMe = "";
@@ -516,6 +517,7 @@ function randomise(){
     document.getElementById("p1.2").selectedIndex = Math.floor(Math.random() * 2);
     document.getElementById("p1.3").selectedIndex = Math.floor(Math.random() * 2);
     document.getElementById("p2.1").selectedIndex = Math.floor(Math.random() * 3);
+    document.getElementById("p2.2").selectedIndex = Math.floor(Math.random() * 2);
     document.getElementById("p2.3").selectedIndex = Math.floor(Math.random() * 2);
     updateMajor1();
     updateMinor1();
@@ -691,11 +693,11 @@ function updateText(){
 
    if (isValid == "false"){
        document.getElementById("extra").style.display = "inline";
-       document.getElementById("text6").style.display = "none";
+    
    }
-   else {
-    document.getElementById("text6").innerText = "this syllogisms is called " + syllName;
-   }
+  
+// currently just hiding step 6, bc may or may not want to show syllogism name
+   document.getElementById("text6").style.display = "none";
 
    if (existential.bool == "true"){
        document.getElementById("existential").style.display = "inline";
@@ -888,9 +890,6 @@ function hideAnswer(){
 
 //Get the button:
 mybutton = document.getElementById("scrollBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
