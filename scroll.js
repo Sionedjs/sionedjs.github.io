@@ -51,29 +51,29 @@
           if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")){
               this.rel = "a";
               this.shading = "uninhabited";
-              this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
+              this.explaination = `nothing can be ${this.aName} but not ${this.bName}`;
           }
           else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")){
               this.rel = "e";
               this.shading = "uninhabited";
-              this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
+              this.explaination = `nothing can be both ${this.aName} and ${this.bName}`;
           }
           else if (part1 == "Some" && part2 == "are"){
               this.rel = "i";
               this.shading = "inhabited";
-              this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
+              this.explaination = `something is both ${this.aName} and ${this.bName}`;
           }
           else if (part1 == "Some" && part2 == "are not"){
               this.rel = "o";
               this.shading = "inhabited";
-              this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
+              this.explaination = `something is ${this.aName} but not ${this.bName}`;
           }
 
         if (this.shading == "uninhabited"){
             this.shadingColour = "grey";
         }
         else {
-            this.shadingColour = "green";
+            this.shadingColour = "red";
         }
 
         
@@ -126,28 +126,28 @@
             if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")){
                 this.rel = "a";
                 this.shading = "uninhabited";
-                this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
+                this.explaination = `nothing can be ${this.aName} but not ${this.bName}`;
             }
             else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")){
                 this.rel = "e";
                 this.shading = "uninhabited";
-                this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
+                this.explaination = `nothing can be both ${this.aName} and ${this.bName}`;
             }
             else if (part1 == "Some" && part2 == "are"){
                 this.rel = "i";
                 this.shading = "inhabited";
-                this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
+                this.explaination = `something is both ${this.aName} and ${this.bName}`;
             }
             else if (part1 == "Some" && part2 == "are not"){
                 this.rel = "o";
                 this.shading = "inhabited";
-                this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
+                this.explaination = `something is ${this.aName} but not ${this.bName}`;
             }
             if (this.shading == "uninhabited"){
                 this.shadingColour = "grey";
             }
             else {
-                this.shadingColour = "green";
+                this.shadingColour = "red";
             }
         
             
@@ -250,8 +250,8 @@
           }  
         }
       let emptyColour = "grey";
-      let inhabitedColour = "green";
-      let possibleColour = "green";
+      let inhabitedColour = "red";
+      let possibleColour = "red";
       let normalColour = "white";
       let backgroundColour = "#f3f3f3";
       var undoMe = "";
@@ -300,7 +300,6 @@
         if (response.index == 0){
             if (response.direction == "down"){
               console.log("0, going down");
-              mybutton.style.display = "block";
               major.set();
               minor.set();
               conclusion.reset();
@@ -311,7 +310,6 @@
             }
             else {
               console.log("0, going up");
-              mybutton.style.display = "none";
               resetVenn();
 
             }
@@ -660,7 +658,6 @@ function updateText(){
    document.getElementById("SeP").innerText = `No ${categories.sName} are ${categories.pName}`;
    document.getElementById("SoP").innerText = `Some ${categories.sName} are not ${categories.pName}`;
 
-   /*
    document.getElementById("text5").innerText = "can conclude that " + conclusion.toString();
    
 
@@ -690,7 +687,7 @@ function updateText(){
    else {
     document.getElementById("text6").innerText = "this syllogisms is called " + syllName;
    }
-   
+
    if (existential.bool == "true"){
        document.getElementById("existential").style.display = "inline";
        document.getElementById("existential1").innerHTML = `For this Syllogism, we can draw a different conclusion under the existential assumption`;
@@ -700,7 +697,6 @@ function updateText(){
     document.getElementById("existential").style.display = "none";
    }
 
-*/
 
 }
 
@@ -847,10 +843,6 @@ function findConclusion(){
 // shows answer to MCQ
 
 function showAnswer(x){
-    //document.getElementById("answer").innerText = "Place an X next to your answer on the sheet";
-    
-    document.getElementById("answer").style.color = "grey";
-    /*
     if (x == conclusion.get()){
         document.getElementById("answer").innerText = "correct";
         document.getElementById("answer").style.color = "green";
@@ -860,10 +852,9 @@ function showAnswer(x){
 
     else {
         document.getElementById("answer").innerText = "Try again";
-        document.getElementById("answer").style.color = "green";
+        document.getElementById("answer").style.color = "red";
         setTimeout(hideAnswer, 2000);
     }
-    */
 }
 
 function showAnswer2(x){
@@ -874,7 +865,7 @@ function showAnswer2(x){
     }
     else {
         document.getElementById("answer2").innerText = "Try again";
-        document.getElementById("answer2").style.color = "green";
+        document.getElementById("answer2").style.color = "red";
         setTimeout(hideAnswer, 2000);
     }
 }
@@ -885,17 +876,6 @@ function hideAnswer(){
     //console.log("hiding answer");
 }
 
-//Get the button:
-mybutton = document.getElementById("scrollBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 350; // For Safari
-  document.documentElement.scrollTop = 350; // For Chrome, Firefox, IE and Opera
-} 
 
 // this scroll function seems to work... keep an eye on I feel it may break
 window.addEventListener("scroll", ()=> {
