@@ -260,9 +260,6 @@
       var scroller = scrollama();
 
 
-
-
-    
       // generic window resize listener event
       function handleResize() {
         // 1. update height of step elements
@@ -300,6 +297,7 @@
         if (response.index == 0){
             if (response.direction == "down"){
               console.log("0, going down");
+              mybutton.style.display = "block";
               major.set();
               minor.set();
               conclusion.reset();
@@ -310,6 +308,7 @@
             }
             else {
               console.log("0, going up");
+              mybutton.style.display = "none";
               resetVenn();
 
             }
@@ -512,7 +511,17 @@ else {
 }   
 }
 
+function randomise(){
+    document.getElementById("p1.1").selectedIndex = Math.floor(Math.random() * 3);
+    document.getElementById("p1.2").selectedIndex = Math.floor(Math.random() * 2);
+    document.getElementById("p1.3").selectedIndex = Math.floor(Math.random() * 2);
+    document.getElementById("p2.1").selectedIndex = Math.floor(Math.random() * 3);
+    document.getElementById("p2.3").selectedIndex = Math.floor(Math.random() * 2);
+    updateMajor1();
+    updateMinor1();
 
+
+}
 
 // takes too long to update diaram
 function resetVenn(){
@@ -875,6 +884,20 @@ function hideAnswer(){
     document.getElementById("answer2").style.color = backgroundColour;
     //console.log("hiding answer");
 }
+
+
+//Get the button:
+mybutton = document.getElementById("scrollBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 350; // For Safari
+  document.documentElement.scrollTop = 350; // For Chrome, Firefox, IE and Opera
+} 
+
 
 
 // this scroll function seems to work... keep an eye on I feel it may break
