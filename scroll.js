@@ -73,7 +73,7 @@
             this.shadingColour = "grey";
         }
         else {
-            this.shadingColour = "red";
+            this.shadingColour = inhabitedColour;
         }
 
         
@@ -147,7 +147,7 @@
                 this.shadingColour = "grey";
             }
             else {
-                this.shadingColour = "red";
+                this.shadingColour = inhabitedColour;
             }
         
             
@@ -517,7 +517,14 @@ function randomise(){
     document.getElementById("p1.2").selectedIndex = Math.floor(Math.random() * 2);
     document.getElementById("p1.3").selectedIndex = Math.floor(Math.random() * 2);
     document.getElementById("p2.1").selectedIndex = Math.floor(Math.random() * 3);
-    document.getElementById("p2.2").selectedIndex = Math.floor(Math.random() * 2);
+    i = Math.floor(Math.random() * 2);
+    if ( i == 0){
+        document.getElementById("p2.2").selectedIndex = i;
+    }
+    else {
+        document.getElementById("p2.2").selectedIndex = 2;
+    }
+    
     document.getElementById("p2.3").selectedIndex = Math.floor(Math.random() * 2);
     updateMajor1();
     updateMinor1();
