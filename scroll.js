@@ -907,8 +907,10 @@ mybutton = document.getElementById("scrollBtn");
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 350; // For Safari
-    document.documentElement.scrollTop = 350; // For Chrome, Firefox, IE and Opera
+    
+   let jumpto =  document.getElementById("rand").offsetTop - (0.9*window.innerHeight );
+    document.body.scrollTop = jumpto; // For Safari
+    document.documentElement.scrollTop = jumpto; // For Chrome, Firefox, IE and Opera
 }
 
 
