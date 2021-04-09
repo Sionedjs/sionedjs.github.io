@@ -667,9 +667,9 @@ function existentialUpdate(cat) {
 function updateText() {
     //conclusion = "";
 
-    document.getElementById("text1").innerText = `${major.toString()} means that ${major.explaination}. As a result, the ${major.shadingColour} area is ${major.shading}. `;
+    document.getElementById("text1").innerText = `"${major.toString()}" means that ${major.explaination}. As a result, the ${major.shadingColour} area is ${major.shading}. `;
     document.getElementById("text2").innerText = `Now we'll take a look at the minor premise, which tells us about the relationship between ${categories.mName} and ${categories.sName}.`;
-    document.getElementById("text3").innerText = `${minor.toString()} means that ${minor.explaination}. As a result, the ${minor.shadingColour} area is ${minor.shading}.`;
+    document.getElementById("text3").innerText = `"${minor.toString()}" means that ${minor.explaination}. As a result, the ${minor.shadingColour} area is ${minor.shading}.`;
     document.getElementById("text4").innerText = `Given this information, what can we say about the relationship between ${categories.sName} and ${categories.pName}?`;
     document.getElementById("SaP").innerText = `All ${categories.sName} are ${categories.pName}`;
     document.getElementById("SiP").innerText = `Some ${categories.sName} are ${categories.pName}`;
