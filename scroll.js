@@ -667,33 +667,33 @@ function existentialUpdate(cat) {
 function updateText() {
     //conclusion = "";
 
-    document.getElementById("text1").innerText = `${major.toString()} means that ${major.explaination}. As a result, the ${major.shadingColour} area is ${major.shading} `;
-    document.getElementById("text2").innerText = `Now we'll take a look at the minor premise, which tells us about the relationship between ${categories.mName} and ${categories.sName}`;
-    document.getElementById("text3").innerText = `${minor.toString()} means that ${minor.explaination}. As a result, the ${minor.shadingColour} area is ${minor.shading}`;
+    document.getElementById("text1").innerText = `${major.toString()} means that ${major.explaination}. As a result, the ${major.shadingColour} area is ${major.shading}. `;
+    document.getElementById("text2").innerText = `Now we'll take a look at the minor premise, which tells us about the relationship between ${categories.mName} and ${categories.sName}.`;
+    document.getElementById("text3").innerText = `${minor.toString()} means that ${minor.explaination}. As a result, the ${minor.shadingColour} area is ${minor.shading}.`;
     document.getElementById("text4").innerText = `Given this information, what can we say about the relationship between ${categories.sName} and ${categories.pName}?`;
     document.getElementById("SaP").innerText = `All ${categories.sName} are ${categories.pName}`;
     document.getElementById("SiP").innerText = `Some ${categories.sName} are ${categories.pName}`;
     document.getElementById("SeP").innerText = `No ${categories.sName} are ${categories.pName}`;
     document.getElementById("SoP").innerText = `Some ${categories.sName} are not ${categories.pName}`;
 
-    document.getElementById("text5").innerText = "can conclude that " + conclusion.toString();
+
 
 
     // explainations, based on what the conclision is
     if (conclusion.get() == "SaP") {
-        document.getElementById("text5").innerText = `The only region of ${categories.sName} that can be inhabited overlaps with ${categories.pName}, so we conclude that ${conclusion.toString()}`;
+        document.getElementById("text5").innerText = `The only region of ${categories.sName} that can be inhabited overlaps with ${categories.pName}, so we conclude that ${conclusion.toString()}.`;
     }
     else if (conclusion.get() == "SiP") {
-        document.getElementById("text5").innerText = `Part of the intersection of ${categories.sName} and ${categories.pName} must be inhabited, so we conclude that ${conclusion.toString()}`;
+        document.getElementById("text5").innerText = `Part of the intersection of ${categories.sName} and ${categories.pName} must be inhabited, so we conclude that ${conclusion.toString()}.`;
     }
     else if (conclusion.get() == "SeP") {
-        document.getElementById("text5").innerText = `The intersection of ${categories.sName} and ${categories.pName} is uninhabited, so we conclude that ${conclusion.toString()}`;
+        document.getElementById("text5").innerText = `The intersection of ${categories.sName} and ${categories.pName} is uninhabited, so we conclude that ${conclusion.toString()}.`;
     }
     else if (conclusion.get() == "SoP") {
-        document.getElementById("text5").innerText = `A region of ${categories.sName} that does not ovelap with ${categories.pName} is inhabited, so we conclude that ${conclusion.toString()}`;
+        document.getElementById("text5").innerText = `A region of ${categories.sName} that does not ovelap with ${categories.pName} is inhabited, so we conclude that ${conclusion.toString()}.`;
     }
     else {
-        document.getElementById("text5").innerText = `We cannot conclude anything about the relationship between ${categories.sName} and ${categories.pName} from the diagram`
+        document.getElementById("text5").innerText = `We cannot conclude anything about the relationship between ${categories.sName} and ${categories.pName} from the diagram.`;
     }
 
 
