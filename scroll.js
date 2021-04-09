@@ -675,6 +675,10 @@ function updateText() {
     document.getElementById("SiP").innerText = `Some ${categories.sName} are ${categories.pName}`;
     document.getElementById("SeP").innerText = `No ${categories.sName} are ${categories.pName}`;
     document.getElementById("SoP").innerText = `Some ${categories.sName} are not ${categories.pName}`;
+    document.getElementById("SaP2").innerText = `All ${categories.sName} are ${categories.pName}`;
+    document.getElementById("SiP2").innerText = `Some ${categories.sName} are ${categories.pName}`;
+    document.getElementById("SeP2").innerText = `No ${categories.sName} are ${categories.pName}`;
+    document.getElementById("SoP2").innerText = `Some ${categories.sName} are not ${categories.pName}`;
 
 
 
@@ -869,7 +873,7 @@ function findConclusion() {
 
 function showAnswer(x) {
     if (x == conclusion.get()) {
-        document.getElementById("answer").innerText = "correct";
+        document.getElementById("answer").innerText = "Correct";
         document.getElementById("answer").style.color = "green";
 
     }
@@ -877,20 +881,20 @@ function showAnswer(x) {
 
     else {
         document.getElementById("answer").innerText = "Try again";
-        document.getElementById("answer").style.color = "red";
+        document.getElementById("answer").style.color = "goldenrod";
         setTimeout(hideAnswer, 2000);
     }
 }
 
 function showAnswer2(x) {
     if (x == existential.conclusion) {
-        document.getElementById("answer2").innerText = "correct";
+        document.getElementById("answer2").innerText = "Correct";
         document.getElementById("answer2").style.color = "green";
 
     }
     else {
         document.getElementById("answer2").innerText = "Try again";
-        document.getElementById("answer2").style.color = "red";
+        document.getElementById("answer2").style.color = "goldenrod";
         setTimeout(hideAnswer, 2000);
     }
 }
