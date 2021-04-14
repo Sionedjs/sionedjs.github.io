@@ -828,6 +828,7 @@ function findConclusion() {
         else if (minor.get() == "MeS") {
             conclusion.set("SeP");
             syllName = "calemes";
+            existential.set("S", "SoP", "Calemos");
         }
         else if (minor.get() == "SoM") {
             conclusion.set("SoP");
