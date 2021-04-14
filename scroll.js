@@ -48,22 +48,22 @@ var major = {
         if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")) {
             this.rel = "a";
             this.shading = "uninhabited";
-            this.explaination = `nothing can be ${this.aName} but not ${this.bName}`;
+            this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
         }
         else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")) {
             this.rel = "e";
             this.shading = "uninhabited";
-            this.explaination = `nothing can be both ${this.aName} and ${this.bName}`;
+            this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
         }
         else if (part1 == "Some" && part2 == "are") {
             this.rel = "i";
             this.shading = "inhabited";
-            this.explaination = `something is both ${this.aName} and ${this.bName}`;
+            this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
         }
         else if (part1 == "Some" && part2 == "are not") {
             this.rel = "o";
             this.shading = "inhabited";
-            this.explaination = `something is ${this.aName} but not ${this.bName}`;
+            this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
         }
 
         if (this.shading == "uninhabited") {
@@ -123,22 +123,22 @@ var minor = {
         if ((part1 == "All" && part2 == "are") || (part1 == "No" && part2 == "are not")) {
             this.rel = "a";
             this.shading = "uninhabited";
-            this.explaination = `nothing can be ${this.aName} but not ${this.bName}`;
+            this.explaination = `nothing can belong to ${this.aName} but not to ${this.bName}`;
         }
         else if ((part1 == "No" && part2 == "are") || (part1 == "All" && part2 == "are not")) {
             this.rel = "e";
             this.shading = "uninhabited";
-            this.explaination = `nothing can be both ${this.aName} and ${this.bName}`;
+            this.explaination = `nothing can belong to both ${this.aName} and ${this.bName}`;
         }
         else if (part1 == "Some" && part2 == "are") {
             this.rel = "i";
             this.shading = "inhabited";
-            this.explaination = `something is both ${this.aName} and ${this.bName}`;
+            this.explaination = `something belongs to both ${this.aName} and ${this.bName}`;
         }
         else if (part1 == "Some" && part2 == "are not") {
             this.rel = "o";
             this.shading = "inhabited";
-            this.explaination = `something is ${this.aName} but not ${this.bName}`;
+            this.explaination = `something belongs to ${this.aName} but not to ${this.bName}`;
         }
         if (this.shading == "uninhabited") {
             this.shadingColour = "grey";
